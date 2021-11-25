@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+ <!-- Latest compiled and minified CSS for BS5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript for BS5 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Roboto:wght@100&display=swap');
+
+    :root {
+--Soft-blue: hsl(215, 51%, 70%);
+--Cyan: hsl(178, 100%, 50%);
+
+--Very-dark-blue-main: hsl(217, 54%, 11%);
+--Very-dark-blue-card: hsl(216, 50%, 16%);
+--Very-dark-blue-line: hsl(215, 32%, 27%);
+--White: hsl(0, 0%, 100%);
+    }
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: "Outfit", "Roboto", sans-serif;
+    background-color: var(--Very-dark-blue-main);
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.container .main-img {
+  position: relative;
+}
+
+.container .main-img div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(178, 100%, 50%, 0.541);
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.container .main-img div:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.container .main-img div img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  background-color: var(--Very-dark-blue-card);
+  border-radius: 10px;
+  box-shadow: 0 30px 0 20px rgba(0, 0, 0, 0.096), 0px 30px 0 50px rgba(0, 0, 0, 0.041);
+}
+.card-text {
+  color: hsla(215, 52%, 70%, 0.651);
+  font-size: 14px;
+}
+.card-img-top {
+  border-radius: 5px;
+}
+
+.card-img-top:hover {           
+      filter: opacity(0.5) contrast(1.2) brightness(100%);
+}
+
+.card-img-top:hover::after {
+      content: url(./images/icon-view.svg);      
+      position: absolute;
+}
+
+/* .card-img-top:hover {
+  content: url(./images/icon-view.svg);
+  position: absolute;
+} */
+
+hr {
+  border: 1px solid var(--Very-dark-blue-line);
+  width: 100%;
+}
+p{
+  font-size: 18px;
+  font-weight: 300;
+}
+a {
+  color: var(--White);
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--Cyan);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container ul li {
+  display: flex;
+  align-items: center;
+}
+
+.container ul li img {
+  margin-right: 0.4rem;
+}
+article {
+  display: flex;
+  align-items: center;
+}
+article img {
+  width: 2rem;
+  border-radius: 50%;
+  border:hsl(0, 0%, 100%) 1px solid;
+  margin-right: 0.5rem;
+}
+.attribution { font-size: 11px; text-align: center; color: hsl(215, 32%, 27%); }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row h-100 align-items-center">
+    <div class="col-md-12">
+      <div class="card mx-auto" style="width: 320px; padding: 20px;">  
+        <section class="main-img">
+        <img class="card-img-top" src="./images/image-equilibrium.jpg" alt="Card image">
+        <div>
+          <img src="./images/icon-view.svg" alt="View icon">
+        </div>
+      </section>
+      <div class="card-body">
+        <h5><a href="#" class="card-title">Equilibrium #3429</a></h5>
+        <p class="card-text">Our Equilibrium collection promotes balance and calm.</p>
+       <ul>
+         <li class="card-text" style="color: var(--Cyan);"><img src="images/icon-ethereum.svg">0.041 ETH
+          </li>
+          <li class="card-text"><img src="images/icon-clock.svg">3 days left</li>
+          </ul>
+        <hr>
+        <article><img src="./images/image-avatar.png" alt="ETH">
+          <p class="card-text">Creation of <a href="#">Jules Wyvern</a></p></article>
+        </div>
+      </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Wasp</a>.
+  </div>
+</body>
+</html>
