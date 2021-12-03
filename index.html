@@ -43,8 +43,7 @@ img {
 body {
     font-family: "Outfit", "Roboto", sans-serif;
     background-color: var(--Very-dark-blue-main);
-    height: 100%;
-    padding: 1.5rem;
+  height: 100%;
 }
 
 .container .main-img {
@@ -139,6 +138,12 @@ ul {
 .container ul li img {
   margin-right: 0.4rem;
 }
+.custom-card {
+  max-width: 320px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 article {
   display: flex;
   align-items: center;
@@ -152,20 +157,19 @@ article img {
 .attribution { font-size: 11px; text-align: center; color: hsl(215, 32%, 27%); }
 .attribution a { color: hsl(228, 45%, 44%); }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .card {
     width: 100%;
-    max-width: 500px;
     margin: 0 auto;
   }
 }
   </style>
 </head>
-<body>
+<body class="min-vh-100 d-flex flex-column align-items-center justify-content-center">
 <div class="container">
   <div class="row h-100 align-items-center">
     <div class="col-md-12">
-      <div class="card mx-auto" style="width: 320px; padding: 20px;">  
+      <div class="card mx-auto my-auto custom-card">  
         <section class="main-img">
         <img class="card-img-top" src="./images/image-equilibrium.jpg" alt="Card image">
         <div>
